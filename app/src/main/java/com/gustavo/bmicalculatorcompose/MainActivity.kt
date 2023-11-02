@@ -40,8 +40,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.gustavo.bmicalculatorcompose.calculate.CalculateBmi
 import com.gustavo.bmicalculatorcompose.ui.theme.BMICalculatorComposeTheme
-import com.gustavo.bmicalculatorcompose.ui.theme.DARK_BLUE
-import com.gustavo.bmicalculatorcompose.ui.theme.LIGHT_BLUE
+import com.gustavo.bmicalculatorcompose.ui.theme.DARK_GREEN
+import com.gustavo.bmicalculatorcompose.ui.theme.LIGHT_GREEN
 import com.gustavo.bmicalculatorcompose.ui.theme.WHITE
 
 class MainActivity : ComponentActivity() {
@@ -77,7 +77,7 @@ fun BmiCalculator() {
     Scaffold(
         topBar = {
             TopAppBar(
-                backgroundColor = LIGHT_BLUE,
+                backgroundColor = LIGHT_GREEN,
                 title = {
                     Text(text = "BMI Calculator", color = WHITE)
                 },
@@ -110,7 +110,7 @@ fun BmiCalculator() {
                 text = "BMI Calculator",
                 fontSize = 25.sp,
                 fontWeight = FontWeight.Bold,
-                color = LIGHT_BLUE,
+                color = LIGHT_GREEN,
                 modifier = Modifier.padding(50.dp)
             )
 
@@ -123,12 +123,12 @@ fun BmiCalculator() {
                     Text(text = "Weight (kg)")
                 },
                 colors = TextFieldDefaults.outlinedTextFieldColors(
-                    cursorColor = LIGHT_BLUE,
-                    focusedBorderColor = LIGHT_BLUE,
-                    textColor = DARK_BLUE,
-                    focusedLabelColor = DARK_BLUE
+                    cursorColor = LIGHT_GREEN,
+                    focusedBorderColor = LIGHT_GREEN,
+                    textColor = DARK_GREEN,
+                    focusedLabelColor = DARK_GREEN
                 ),
-                textStyle = TextStyle(DARK_BLUE, 28.sp),
+                textStyle = TextStyle(DARK_GREEN, 28.sp),
                 maxLines = 1,
                 singleLine = true,
                 modifier = Modifier
@@ -148,12 +148,12 @@ fun BmiCalculator() {
                     Text(text = "Height")
                 },
                 colors = TextFieldDefaults.outlinedTextFieldColors(
-                    cursorColor = LIGHT_BLUE,
-                    focusedBorderColor = LIGHT_BLUE,
-                    textColor = DARK_BLUE,
-                    focusedLabelColor = DARK_BLUE
+                    cursorColor = LIGHT_GREEN,
+                    focusedBorderColor = LIGHT_GREEN,
+                    textColor = DARK_GREEN,
+                    focusedLabelColor = DARK_GREEN
                 ),
-                textStyle = TextStyle(DARK_BLUE, 28.sp),
+                textStyle = TextStyle(DARK_GREEN, 28.sp),
                 maxLines = 1,
                 singleLine = true,
                 modifier = Modifier
@@ -182,7 +182,7 @@ fun BmiCalculator() {
                     .padding(20.dp)
                     .height(50.dp),
                 colors = ButtonDefaults.buttonColors(
-                    backgroundColor = LIGHT_BLUE,
+                    backgroundColor = LIGHT_GREEN,
                     contentColor = WHITE
                 )
             ) {
@@ -196,7 +196,7 @@ fun BmiCalculator() {
             Text(
                 text = resultText,
                 fontSize = 18.sp,
-                color = DARK_BLUE,
+                color = DARK_GREEN,
                 fontWeight = FontWeight.Bold
             )
         }
