@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -15,6 +16,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.IconButton
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
@@ -27,7 +29,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -76,11 +80,25 @@ fun BmiCalculator() {
                 backgroundColor = LIGHT_BLUE,
                 title = {
                     Text(text = "BMI Calculator", color = WHITE)
+                },
+                actions = {
+                    IconButton(
+                        onClick = {
+                            weight = ""
+                            height = ""
+                            resultText = ""
+                        }
+                    ) {
+                        Image(
+                            imageVector = ImageVector.vectorResource(id = R.drawable.ic_refresh),
+                            contentDescription = "Icon to reset all fields"
+                        )
+                    }
                 }
-
             )
         }
     ) {
+
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
@@ -95,6 +113,7 @@ fun BmiCalculator() {
                 color = LIGHT_BLUE,
                 modifier = Modifier.padding(50.dp)
             )
+
             OutlinedTextField(
                 value = weight,
                 onValueChange = {
@@ -148,10 +167,12 @@ fun BmiCalculator() {
             Button(
                 onClick = {
                     if (weight.isEmpty() || height.isEmpty()) {
-                        Toast.makeText(context,
+                        Toast.makeText(
+                            context,
                             "Complete all fields!",
-                            Toast.LENGTH_SHORT).show()
-                    }else{
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } else {
                         calculateBmi.calculateBmi(weight, height)
                         resultText = calculateBmi.bmiResult()
                     }
