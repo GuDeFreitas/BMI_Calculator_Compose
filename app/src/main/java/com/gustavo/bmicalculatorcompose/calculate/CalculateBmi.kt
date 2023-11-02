@@ -34,5 +34,4 @@ class CalculateBmi {
     fun bmiResult(): String{
         return bmiResult
     }
-
 }
